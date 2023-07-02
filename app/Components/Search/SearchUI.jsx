@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import SearchPopup from "./SearchPopup";
+import SearchPopup from "./SearchPopUp";
 import { Search } from "react-feather";
 
 const SearchUI = ({ setShowPopup }) => {
