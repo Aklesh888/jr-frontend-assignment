@@ -12,9 +12,10 @@ const SearchPopup = () => {
     fetchSearchResults(searchTerm)
   );
   
+  const popupHeight = searchTerm === '' ? "" : "h-[500px]";
 
   return (
-    <div className="flex h-92 rounded-md md:w-[500px] flex-col bg-white transition-all right-20 top-5 absolute">
+    <div className={`flex rounded-md md:w-[500px] flex-col bg-white transition-all right-20 top-5 absolute `}>
       <div className="px-4 m-4 h-12 w-30vw flex justify-between rounded border border-blue-400">
         <div className="flex justify-center items-center">
           <Search />
@@ -28,7 +29,7 @@ const SearchPopup = () => {
           
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center h-[500px] overflow-auto ">
+      <div className={`flex flex-col items-center justify-center ${popupHeight} overflow-auto`}>
         {isLoading ? (
           <Loader className="animate-spin" color="black" size={40} />
         ) : (

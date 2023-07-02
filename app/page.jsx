@@ -18,6 +18,7 @@ function Page() {
       <div className="flex flex-wrap justify-center gap-4 p-4 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-hover:bg-gray-300 scrollbar-track-hover:bg-gray-300  ">
         {data.map((album) => (
           <AlbumCard
+            id={album.item.id}
             key={album.item.id}
             artist={album.item.artist.name}
             title={album.item.name}
