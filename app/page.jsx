@@ -3,13 +3,14 @@ import React from "react";
 import { useQuery, QueryClientProvider, QueryClient } from "react-query";
 import AlbumCard from "./Components/AlbumCard";
 import fetchArtists from "../lib/fetchTopCharts";
+import {Loader} from 'react-feather'
 
 const queryClient = new QueryClient();
 
 function Page() {
   const { data, isLoading, isError } = useQuery("top-charts", fetchArtists);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <p className="flex justify-center items-center m-40"><Loader className=" animate-spin self-center" size={60}/></p>;
   if (isError) return <p>Error :</p>;
 
   return (
